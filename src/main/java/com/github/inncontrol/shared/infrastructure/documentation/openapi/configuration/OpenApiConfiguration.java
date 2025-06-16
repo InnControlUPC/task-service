@@ -16,16 +16,13 @@ import java.util.Collections;
 
 @Configuration
 public class OpenApiConfiguration {
-
-    @Value("${spring.profiles.default}")
-    private String activeProfile;
     
     @Bean
     public OpenAPI learningPlatformOpenApi() {
         // General configuration
         var openApi = new OpenAPI();
         openApi.info(new Info()
-                        .title("HoTech Platform API")
+                        .title("InnControl Task API")
                         .description("Hotech application REST API documentation.")
                         .version("v1.0.0")
                         .license(new License().name("Apache 2.0")
@@ -36,11 +33,8 @@ public class OpenApiConfiguration {
 
          boolean isRunningInProd =  activeProfile.equals("prod");
 
-        if (isRunningInProd) {
-            openApi.servers(Collections.singletonList(new Server().url("https://inncontrol-api.ryzeon.me")));
-        } else {
-            openApi.servers(Collections.singletonList(new Server().url("http://localhost:8080")));
-        }
+        openApi.servers(Collections.singletonList(new Server().url("/")));
+
 
         final String securitySchemeName = "bearerAuth";
 

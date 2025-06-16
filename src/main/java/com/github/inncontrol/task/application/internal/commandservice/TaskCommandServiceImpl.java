@@ -4,7 +4,6 @@ import java.util.Optional;
 
 import com.github.inncontrol.shared.application.internal.outboundedservices.acl.ExternalEmployeeService;
 import com.github.inncontrol.task.domain.model.commands.DeleteTaskCommand;
-import com.github.inncontrol.task.domain.model.valueobjects.EmployeeIdentifier;
 import org.springframework.stereotype.Service;
 
 import com.github.inncontrol.task.domain.model.aggregates.Task;

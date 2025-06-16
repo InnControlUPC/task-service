@@ -1,4 +1,4 @@
-package com.inncontrol.platform.inncontroltaskservice;
+package com.github.inncontrol.task;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
