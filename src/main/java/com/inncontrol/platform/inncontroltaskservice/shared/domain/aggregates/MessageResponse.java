@@ -1,4 +1,4 @@
-package com.github.inncontrol.shared.domain.aggregates;
+package com.inncontrol.platform.inncontroltaskservice.shared.domain.aggregates;
 
 /**
  * Created by Alex Avila Asto - A.K.A (Ryzeon)

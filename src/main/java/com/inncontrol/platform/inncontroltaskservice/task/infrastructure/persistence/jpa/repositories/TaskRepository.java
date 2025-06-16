@@ -1,11 +1,10 @@
-package com.github.inncontrol.task.infrastructure.persistence.jpa.repositories;
+package com.inncontrol.platform.inncontroltaskservice.task.infrastructure.persistence.jpa.repositories;
 
-import com.github.inncontrol.task.domain.model.valueobjects.EmployeeIdentifier;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.aggregates.Task;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.valueobjects.EmployeeIdentifier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
-import com.github.inncontrol.task.domain.model.aggregates.Task;
 
 import java.util.Date;
 import java.util.List;

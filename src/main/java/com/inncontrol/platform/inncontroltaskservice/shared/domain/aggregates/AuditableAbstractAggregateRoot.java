@@ -1,4 +1,4 @@
-package com.github.inncontrol.shared.domain.aggregates;
+package com.inncontrol.platform.inncontroltaskservice.shared.domain.aggregates;
 
 import jakarta.persistence.*;
 import lombok.Getter;

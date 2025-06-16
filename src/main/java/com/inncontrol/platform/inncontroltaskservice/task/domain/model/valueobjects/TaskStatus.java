@@ -1,4 +1,4 @@
-package com.github.inncontrol.task.domain.model.valueobjects;
+package com.inncontrol.platform.inncontroltaskservice.task.domain.model.valueobjects;
 
 public enum TaskStatus {
 

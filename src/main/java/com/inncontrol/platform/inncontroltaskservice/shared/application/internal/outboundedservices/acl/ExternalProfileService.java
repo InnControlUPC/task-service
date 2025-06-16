@@ -1,7 +1,7 @@
-package com.github.inncontrol.shared.application.internal.outboundedservices.acl;
+/*package com.inncontrol.platform.inncontroltaskservice.shared.application.internal.outboundedservices.acl;
 
-import com.github.inncontrol.employees.domain.model.valueobjects.ProfileId;
-import com.github.inncontrol.profiles.interfaces.acl.ProfilesContextFacade;
+import com.inncontrol.platform.inncontroltaskservice.employees.domain.model.valueobjects.ProfileId;
+import com.inncontrol.platform.inncontroltaskservice.profiles.interfaces.acl.ProfilesContextFacade;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -27,4 +27,4 @@ public class ExternalProfileService {
         if (profileId == 0L) return Optional.empty();
         return Optional.of(new ProfileId(profileId));
     }
-}
+}*/

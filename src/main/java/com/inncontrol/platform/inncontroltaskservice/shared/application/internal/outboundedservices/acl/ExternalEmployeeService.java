@@ -1,11 +1,8 @@
-package com.github.inncontrol.shared.application.internal.outboundedservices.acl;
+/* package com.inncontrol.platform.inncontroltaskservice.shared.application.internal.outboundedservices.acl;
 
-import com.github.inncontrol.employees.interfaces.acl.EmployeeContextFacade;
-import com.github.inncontrol.profiles.interfaces.acl.ProfilesContextFacade;
-import com.github.inncontrol.shared.domain.valueobjects.EmployeeId;
-import com.github.inncontrol.task.domain.model.valueobjects.EmployeeIdentifier;
+import com.inncontrol.platform.inncontroltaskservice.employees.interfaces.acl.EmployeeContextFacade;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.valueobjects.EmployeeIdentifier;
 import lombok.AllArgsConstructor;
-import org.hibernate.annotations.SecondaryRow;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -14,7 +11,7 @@ import java.util.Optional;
  * Created by Alex Avila Asto - A.K.A (Ryzeon)
  * Project: inncontrol-backend
  * Date: 6/21/24 @ 08:03
- */
+ *
 @Service
 @AllArgsConstructor
 public class ExternalEmployeeService {
@@ -30,4 +27,4 @@ public class ExternalEmployeeService {
         if (employeeId == 0L) return Optional.empty();
         return Optional.of(new EmployeeIdentifier(employeeId));
     }
-}
+} */

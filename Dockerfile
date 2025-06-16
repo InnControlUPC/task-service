@@ -8,20 +8,17 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-# Change spring.profiles.default to prod
-RUN sed -i 's/spring.profiles.default=dev/spring.profiles.default=prod/' src/main/resources/application.properties
-
 # Package the application
-RUN mvn clean install
+RUN mvn clean install -DskipTests
 
 # Use openjdk 21 for running the application
 FROM openjdk:21-jdk-slim
 
 # Copy the jar file from the build stage
-COPY --from=build /app/target/inncontrol-backend-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/inncontrol-task-service-0.0.1-SNAPSHOT.jar task-app.jar
 
 # Expose the application's port
-EXPOSE 8045
+EXPOSE 8090
 
 # Run the application
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/task-app.jar"]

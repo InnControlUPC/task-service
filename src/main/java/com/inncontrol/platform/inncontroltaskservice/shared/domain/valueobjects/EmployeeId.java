@@ -1,4 +1,4 @@
-package com.github.inncontrol.shared.domain.valueobjects;
+package com.inncontrol.platform.inncontroltaskservice.shared.domain.valueobjects;
 
 /**
  * Created by Alex Avila Asto - A.K.A (Ryzeon)

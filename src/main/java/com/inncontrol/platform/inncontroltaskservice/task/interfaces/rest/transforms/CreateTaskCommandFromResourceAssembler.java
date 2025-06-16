@@ -1,7 +1,7 @@
-package com.github.inncontrol.task.interfaces.rest.transforms;
+package com.inncontrol.platform.inncontroltaskservice.task.interfaces.rest.transforms;
 
-import com.github.inncontrol.task.domain.model.commands.CreateTaskCommand;
-import com.github.inncontrol.task.interfaces.rest.resources.TaskCreateCommandResource;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.commands.CreateTaskCommand;
+import com.inncontrol.platform.inncontroltaskservice.task.interfaces.rest.resources.TaskCreateCommandResource;
 
 import java.time.Instant;
 import java.util.Date;

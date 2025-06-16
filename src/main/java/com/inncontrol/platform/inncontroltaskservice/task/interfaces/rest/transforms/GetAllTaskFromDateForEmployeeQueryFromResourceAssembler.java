@@ -1,7 +1,7 @@
-package com.github.inncontrol.task.interfaces.rest.transforms;
+package com.inncontrol.platform.inncontroltaskservice.task.interfaces.rest.transforms;
 
-import com.github.inncontrol.task.domain.model.queries.GetAllTaskFromDatesForEmployeeQuery;
-import com.github.inncontrol.task.interfaces.rest.resources.GetAllTaskFromDatesForEmployeeResource;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.queries.GetAllTaskFromDatesForEmployeeQuery;
+import com.inncontrol.platform.inncontroltaskservice.task.interfaces.rest.resources.GetAllTaskFromDatesForEmployeeResource;
 
 import java.time.Instant;
 import java.util.Date;

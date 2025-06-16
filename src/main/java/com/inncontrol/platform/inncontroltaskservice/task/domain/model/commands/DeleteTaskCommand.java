@@ -1,4 +1,4 @@
-package com.github.inncontrol.task.domain.model.commands;
+package com.inncontrol.platform.inncontroltaskservice.task.domain.model.commands;
 
 public record DeleteTaskCommand(
         Long id

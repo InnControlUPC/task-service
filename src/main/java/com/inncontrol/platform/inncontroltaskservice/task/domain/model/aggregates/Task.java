@@ -1,9 +1,9 @@
-package com.github.inncontrol.task.domain.model.aggregates;
+package com.inncontrol.platform.inncontroltaskservice.task.domain.model.aggregates;
 
-import com.github.inncontrol.shared.domain.aggregates.AuditableAbstractAggregateRoot;
-import com.github.inncontrol.task.domain.model.valueobjects.EmployeeIdentifier;
-import com.github.inncontrol.task.domain.model.valueobjects.TaskInformation;
-import com.github.inncontrol.task.domain.model.valueobjects.TaskStatus;
+import com.inncontrol.platform.inncontroltaskservice.shared.domain.aggregates.AuditableAbstractAggregateRoot;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.valueobjects.EmployeeIdentifier;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.valueobjects.TaskInformation;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.valueobjects.TaskStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.format.datetime.DateFormatter;

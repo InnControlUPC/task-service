@@ -1,7 +1,7 @@
-package com.github.inncontrol.task.interfaces.rest.transforms;
+package com.inncontrol.platform.inncontroltaskservice.task.interfaces.rest.transforms;
 
-import com.github.inncontrol.task.domain.model.queries.GetAllTaskInWeekForEmployeeQuery;
-import com.github.inncontrol.task.interfaces.rest.resources.GetAllTaskInWeekForEmployeeResource;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.queries.GetAllTaskInWeekForEmployeeQuery;
+import com.inncontrol.platform.inncontroltaskservice.task.interfaces.rest.resources.GetAllTaskInWeekForEmployeeResource;
 
 public class GetAllTasksInWeekForEmployeeQueryFromResourceAssembler {
 

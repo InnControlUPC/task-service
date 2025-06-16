@@ -1,4 +1,4 @@
-package com.github.inncontrol.task.interfaces.rest.resources;
+package com.inncontrol.platform.inncontroltaskservice.task.interfaces.rest.resources;
 
 import java.util.Date;
 

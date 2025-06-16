@@ -1,6 +1,6 @@
-package com.github.inncontrol.shared.infrastructure.sfw.exeption.handler;
+package com.inncontrol.platform.inncontroltaskservice.shared.infrastructure.sfw.exeption.handler;
 
-import com.github.inncontrol.shared.domain.aggregates.MessageResponse;
+import com.inncontrol.platform.inncontroltaskservice.shared.domain.aggregates.MessageResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

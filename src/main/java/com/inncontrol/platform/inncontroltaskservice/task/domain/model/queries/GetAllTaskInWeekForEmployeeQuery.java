@@ -1,4 +1,4 @@
-package com.github.inncontrol.task.domain.model.queries;
+package com.inncontrol.platform.inncontroltaskservice.task.domain.model.queries;
 
 public record GetAllTaskInWeekForEmployeeQuery(
         String employeeEmail

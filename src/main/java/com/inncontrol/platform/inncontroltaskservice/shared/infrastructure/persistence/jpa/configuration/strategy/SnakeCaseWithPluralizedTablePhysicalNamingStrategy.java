@@ -1,4 +1,4 @@
-package com.github.inncontrol.shared.infrastructure.persistence.jpa.configuration.strategy;
+package com.inncontrol.platform.inncontroltaskservice.shared.infrastructure.persistence.jpa.configuration.strategy;
 
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy;

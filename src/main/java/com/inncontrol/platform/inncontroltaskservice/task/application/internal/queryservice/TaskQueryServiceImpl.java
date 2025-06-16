@@ -1,27 +1,22 @@
-package com.github.inncontrol.task.application.internal.queryservice;
+package com.inncontrol.platform.inncontroltaskservice.task.application.internal.queryservice;
 
-import java.util.*;
-
-import com.github.inncontrol.shared.application.internal.outboundedservices.acl.ExternalEmployeeService;
+//import com.inncontrol.platform.inncontroltaskservice.shared.application.internal.outboundedservices.acl.ExternalEmployeeService;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.aggregates.Task;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.queries.*;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.valueobjects.EmployeeIdentifier;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.services.TaskQueryService;
+import com.inncontrol.platform.inncontroltaskservice.task.infrastructure.persistence.jpa.repositories.TaskRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import com.github.inncontrol.task.domain.model.aggregates.Task;
-import com.github.inncontrol.task.domain.model.queries.GetAllTaskForEmployeeQuery;
-import com.github.inncontrol.task.domain.model.queries.GetAllTaskFromDatesForEmployeeQuery;
-import com.github.inncontrol.task.domain.model.queries.GetAllTaskInWeekForEmployeeQuery;
-import com.github.inncontrol.task.domain.model.queries.GetAllTaskQuery;
-import com.github.inncontrol.task.domain.model.queries.GetTaskByIdQuery;
-import com.github.inncontrol.task.domain.services.TaskQueryService;
-import com.github.inncontrol.task.infrastructure.persistence.jpa.repositories.TaskRepository;
-
-import lombok.AllArgsConstructor;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
 public class TaskQueryServiceImpl implements TaskQueryService {
 
     private final TaskRepository taskRepository;
-    private final ExternalEmployeeService employeeService;
+    //private final ExternalEmployeeService employeeService;
 
     @Override
     public Optional<Task> handle(GetTaskByIdQuery query) {
@@ -35,13 +30,13 @@ public class TaskQueryServiceImpl implements TaskQueryService {
 
     @Override
     public List<Task> handle(GetAllTaskForEmployeeQuery query) {
-        var employeeId = employeeService.fetchEmployeeIdentifierByEmail(query.employeeEmail()).orElseThrow(() -> new IllegalArgumentException("Employee not found"));
+        var employeeId = new EmployeeIdentifier(0L);//employeeService.fetchEmployeeIdentifierByEmail(query.employeeEmail()).orElseThrow(() -> new IllegalArgumentException("Employee not found"));
         return taskRepository.findAllByEmployee(employeeId);
     }
 
     @Override
     public List<Task> handle(GetAllTaskInWeekForEmployeeQuery query) {
-        var employeeId = employeeService.fetchEmployeeIdentifierByEmail(query.employeeEmail()).orElseThrow(() -> new IllegalArgumentException("Employee not found"));
+        var employeeId = new EmployeeIdentifier(0L);//employeeService.fetchEmployeeIdentifierByEmail(query.employeeEmail()).orElseThrow(() -> new IllegalArgumentException("Employee not found"));
         // Here we initialize a GregorianCalendar instance
         var calendar = new GregorianCalendar();
 
@@ -64,7 +59,7 @@ public class TaskQueryServiceImpl implements TaskQueryService {
 
     @Override
     public List<Task> handle(GetAllTaskFromDatesForEmployeeQuery query) {
-        var employeeId = employeeService.fetchEmployeeIdentifierByEmail(query.employeeEmail()).orElseThrow(() -> new IllegalArgumentException("Employee not found"));
+        var employeeId = new EmployeeIdentifier(0L);//employeeService.fetchEmployeeIdentifierByEmail(query.employeeEmail()).orElseThrow(() -> new IllegalArgumentException("Employee not found"));
         return taskRepository.finAllInDateRangeByEmployee(employeeId, query.startDate(), query.endDate());
     }
 

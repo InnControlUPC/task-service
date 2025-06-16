@@ -1,7 +1,7 @@
-package com.github.inncontrol.shared.application.internal.outboundedservices.acl;
+/*package com.inncontrol.platform.inncontroltaskservice.shared.application.internal.outboundedservices.acl;
 
-import com.github.inncontrol.iam.interfaces.acl.IamContextFacade;
-import com.github.inncontrol.profiles.domain.model.valueobjects.UserId;
+import com.inncontrol.platform.inncontroltaskservice.iam.interfaces.acl.IamContextFacade;
+import com.inncontrol.platform.inncontroltaskservice.profiles.domain.model.valueobjects.UserId;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -28,3 +28,4 @@ public class ExternalUserService {
     }
 
 }
+*/

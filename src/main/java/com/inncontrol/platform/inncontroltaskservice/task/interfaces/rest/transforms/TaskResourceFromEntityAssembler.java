@@ -1,7 +1,7 @@
-package com.github.inncontrol.task.interfaces.rest.transforms;
+package com.inncontrol.platform.inncontroltaskservice.task.interfaces.rest.transforms;
 
-import com.github.inncontrol.task.domain.model.aggregates.Task;
-import com.github.inncontrol.task.interfaces.rest.resources.TaskResource;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.aggregates.Task;
+import com.inncontrol.platform.inncontroltaskservice.task.interfaces.rest.resources.TaskResource;
 
 public class TaskResourceFromEntityAssembler {
 

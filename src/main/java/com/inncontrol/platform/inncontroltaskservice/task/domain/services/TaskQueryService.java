@@ -1,7 +1,7 @@
-package com.github.inncontrol.task.domain.services;
+package com.inncontrol.platform.inncontroltaskservice.task.domain.services;
 
-import com.github.inncontrol.task.domain.model.aggregates.Task;
-import com.github.inncontrol.task.domain.model.queries.*;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.aggregates.Task;
+import com.inncontrol.platform.inncontroltaskservice.task.domain.model.queries.*;
 
 import java.util.List;
 import java.util.Optional;

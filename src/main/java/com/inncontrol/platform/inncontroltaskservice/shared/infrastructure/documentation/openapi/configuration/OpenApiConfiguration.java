@@ -1,16 +1,16 @@
-package com.github.inncontrol.shared.infrastructure.documentation.openapi.configuration;
+package com.inncontrol.platform.inncontroltaskservice.shared.infrastructure.documentation.openapi.configuration;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.ExternalDocumentation;
-import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
-import org.springframework.context.annotation.Bean;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import io.swagger.v3.oas.models.servers.Server;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.Collections;
 
@@ -39,7 +39,7 @@ public class OpenApiConfiguration {
         if (isRunningInProd) {
             openApi.servers(Collections.singletonList(new Server().url("https://inncontrol-api.ryzeon.me")));
         } else {
-            openApi.servers(Collections.singletonList(new Server().url("http://localhost:8080")));
+            openApi.servers(Collections.singletonList(new Server().url("http://localhost:8090")));
         }
 
         final String securitySchemeName = "bearerAuth";
