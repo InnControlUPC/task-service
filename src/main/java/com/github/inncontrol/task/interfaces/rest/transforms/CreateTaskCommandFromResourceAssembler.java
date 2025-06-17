@@ -18,6 +18,7 @@ public class CreateTaskCommandFromResourceAssembler {
                 resource.title(),
                 resource.description(),
                 resource.employeeEmail(),
+                resource.managerEmail(),
                 parseDate(resource.dueDate())
         );
     }

@@ -17,4 +17,9 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     @Query("SELECT t FROM Task t WHERE t.employee = :employee AND t.dueDate >= :start AND t.dueDate <= :end")
     List<Task> finAllInDateRangeByEmployee(EmployeeIdentifier employee, Date start, Date end);
+
+    List<Task> findAllByManager(EmployeeIdentifier manager);
+
+    @Query("SELECT t FROM Task t WHERE t.manager = :manager AND t.dueDate >= :start AND t.dueDate <= :end")
+    List<Task> finAllInDateRangeByManager(EmployeeIdentifier manager, Date start, Date end);
 }

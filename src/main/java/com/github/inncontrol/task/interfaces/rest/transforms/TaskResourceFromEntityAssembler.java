@@ -12,7 +12,8 @@ public class TaskResourceFromEntityAssembler {
                 task.getTaskInformation().description(),
                 !task.isCompleted(),
                 task.getDueDate(),
-                task.getEmployeeMail()
+                task.getEmployeeMail(),
+                task.getManagerMail()
         );
     }
 }

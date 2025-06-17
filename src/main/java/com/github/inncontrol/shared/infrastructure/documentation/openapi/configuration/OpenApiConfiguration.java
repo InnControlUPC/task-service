@@ -16,6 +16,9 @@ import java.util.Collections;
 
 @Configuration
 public class OpenApiConfiguration {
+
+    @Value("${spring.profiles.default}")
+    private String activeProfile;
     
     @Bean
     public OpenAPI learningPlatformOpenApi() {

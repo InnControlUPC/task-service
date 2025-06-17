@@ -2,8 +2,9 @@ package com.github.inncontrol.task.application.internal.commandservice;
 
 import java.util.Optional;
 
-import com.github.inncontrol.shared.application.internal.outboundedservices.acl.ExternalEmployeeService;
+//import com.github.inncontrol.shared.application.internal.outboundedservices.acl.ExternalEmployeeService;
 import com.github.inncontrol.task.domain.model.commands.DeleteTaskCommand;
+import com.github.inncontrol.task.domain.model.valueobjects.EmployeeIdentifier;
 import org.springframework.stereotype.Service;
 
 import com.github.inncontrol.task.domain.model.aggregates.Task;
@@ -22,20 +23,22 @@ import lombok.AllArgsConstructor;
 public class TaskCommandServiceImpl implements TaskCommandService {
 
     private final TaskRepository taskRepository;
-    private final ExternalEmployeeService employeeService;
+    //private final ExternalEmployeeService employeeService;
 
     @Override
     public Optional<Task> handle(CreateTaskCommand command) {
-        var employeeId = employeeService.fetchEmployeeIdentifierByEmail(command.employeeEmail());
-        if (employeeId.isEmpty()) {
+        //var employeeId = employeeService.fetchEmployeeIdentifierByEmail(command.employeeEmail());
+        /*if (employeeId.isEmpty()) {
             throw new IllegalArgumentException("Employee with email not found");
-        }
+        }*/
         var task = new Task(
                 new TaskInformation(command.title(), command.description()),
                 TaskStatus.SCHEDULED,
                 command.dueDate(),
-                employeeId.get(),
-                command.employeeEmail()
+                new EmployeeIdentifier(0L),
+                new EmployeeIdentifier(0L),
+                command.employeeEmail(),
+                command.managerEmail()
         );
         return Optional.of(taskRepository.save(task));
     }

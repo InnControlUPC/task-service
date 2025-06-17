@@ -17,4 +17,10 @@ public interface TaskQueryService {
     List<Task> handle(GetAllTaskInWeekForEmployeeQuery query);
 
     List<Task> handle(GetAllTaskFromDatesForEmployeeQuery query);
+
+    List<Task> handle(GetAllTaskForManagerQuery query);
+
+    List<Task> handle(GetAllTaskInWeekForManagerQuery query);
+
+    List<Task> handle(GetAllTaskFromDatesForManagerQuery query);
 }

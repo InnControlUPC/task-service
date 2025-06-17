@@ -10,7 +10,7 @@ services:
 
   task_app:
     build: ./
-    image: sha256:61fd6d9e59a1c4f675d9bd3c2d88e9f17c584ca27f2ec312ef1ec8ec0ce4833c
+    image: hmarcelorenteriap/inncontrol-task:latest
     ports:
       - "8045:8045"
     environment:

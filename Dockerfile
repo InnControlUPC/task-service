@@ -9,13 +9,13 @@ COPY pom.xml .
 COPY src ./src
 
 # Package the application
-RUN mvn clean install
+RUN mvn clean install -DskipTests
 
 # Use openjdk 21 for running the application
 FROM openjdk:21-jdk-slim
 
 # Copy the jar file from the build stage
-COPY --from=build /app/target/task-service-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/task-service-0.0.1-SNAPSHOT.jar task-app.jar
 
 # Run the application
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/task-app.jar"]

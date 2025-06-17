@@ -4,18 +4,13 @@ import com.github.inncontrol.task.domain.model.commands.CompleteTaskCommand;
 import com.github.inncontrol.task.domain.model.commands.DeleteTaskCommand;
 import com.github.inncontrol.task.domain.model.commands.StartTaskCommand;
 import com.github.inncontrol.task.domain.model.queries.GetAllTaskForEmployeeQuery;
+import com.github.inncontrol.task.domain.model.queries.GetAllTaskForManagerQuery;
 import com.github.inncontrol.task.domain.model.queries.GetAllTaskQuery;
 import com.github.inncontrol.task.domain.model.queries.GetTaskByIdQuery;
 import com.github.inncontrol.task.domain.services.TaskCommandService;
 import com.github.inncontrol.task.domain.services.TaskQueryService;
-import com.github.inncontrol.task.interfaces.rest.resources.GetAllTaskFromDatesForEmployeeResource;
-import com.github.inncontrol.task.interfaces.rest.resources.GetAllTaskInWeekForEmployeeResource;
-import com.github.inncontrol.task.interfaces.rest.resources.TaskCreateCommandResource;
-import com.github.inncontrol.task.interfaces.rest.resources.TaskResource;
-import com.github.inncontrol.task.interfaces.rest.transforms.CreateTaskCommandFromResourceAssembler;
-import com.github.inncontrol.task.interfaces.rest.transforms.GetAllTaskFromDateForEmployeeQueryFromResourceAssembler;
-import com.github.inncontrol.task.interfaces.rest.transforms.GetAllTasksInWeekForEmployeeQueryFromResourceAssembler;
-import com.github.inncontrol.task.interfaces.rest.transforms.TaskResourceFromEntityAssembler;
+import com.github.inncontrol.task.interfaces.rest.resources.*;
+import com.github.inncontrol.task.interfaces.rest.transforms.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -54,6 +49,16 @@ public class TaskController {
         return ResponseEntity.ok(tasks);
     }
 
+    @GetMapping("/manager/{email}")
+    public ResponseEntity<List<TaskResource>> getAllTasksForManager(@PathVariable String email) {
+        var query = new GetAllTaskForManagerQuery(email);
+        var tasks = taskQueryService.handle(query)
+                .stream()
+                .map(TaskResourceFromEntityAssembler::toResourceFromEntity)
+                .toList();
+        return ResponseEntity.ok(tasks);
+    }
+
     @DeleteMapping("{id}")
     public void deleteTask(@PathVariable Long id) {
         var command = new DeleteTaskCommand(id);
@@ -83,6 +88,26 @@ public class TaskController {
     @GetMapping("/date")
     public ResponseEntity<List<TaskResource>> getAllTaskFromDateForEmployee(@RequestBody GetAllTaskFromDatesForEmployeeResource resource) {
         var query = GetAllTaskFromDateForEmployeeQueryFromResourceAssembler.toQueryFromResource(resource);
+        var tasks = taskQueryService.handle(query)
+                .stream()
+                .map(TaskResourceFromEntityAssembler::toResourceFromEntity)
+                .toList();
+        return ResponseEntity.ok(tasks);
+    }
+
+    @GetMapping("/manager/week")
+    public ResponseEntity<List<TaskResource>> getAllTaskInWeekByManagerEmail(@RequestBody GetAllTaskInWeekForManagerResource resource) {
+        var query = GetAllTasksInWeekForManagerQueryFromResourceAssembler.toQueryFromResource(resource);
+        var tasks = taskQueryService.handle(query)
+                .stream()
+                .map(TaskResourceFromEntityAssembler::toResourceFromEntity)
+                .toList();
+        return ResponseEntity.ok(tasks);
+    }
+
+    @GetMapping("/manager/date")
+    public ResponseEntity<List<TaskResource>> getAllTaskFromDateForManager(@RequestBody GetAllTaskFromDatesForManagerResource resource) {
+        var query = GetAllTaskFromDateForManagerQueryFromResourceAssembler.toQueryFromResource(resource);
         var tasks = taskQueryService.handle(query)
                 .stream()
                 .map(TaskResourceFromEntityAssembler::toResourceFromEntity)

@@ -8,6 +8,7 @@ public record TaskResource(
         String description,
         boolean pending,
         Date dueDate,
-        String employeeEmail
+        String employeeEmail,
+        String managerEmail
 ) {
 }

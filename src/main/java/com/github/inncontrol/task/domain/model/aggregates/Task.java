@@ -29,18 +29,30 @@ public class Task extends AuditableAbstractAggregateRoot<Task> {
     @Getter
     private EmployeeIdentifier employee;
 
+    @Embedded
+    @AttributeOverrides({
+        @AttributeOverride(name = "employeeId", column = @Column(name = "manager_id"))
+    })
+    @Getter
+    private EmployeeIdentifier manager;
+
     @Getter
     private String employeeMail;
+
+    @Getter
+    private String managerMail;
 
     public Task() {
     }
 
-    public Task(TaskInformation taskInformation, TaskStatus status, Date dueDate, EmployeeIdentifier employee, String employeeMail) {
+    public Task(TaskInformation taskInformation, TaskStatus status, Date dueDate, EmployeeIdentifier employee, EmployeeIdentifier manager, String employeeMail, String managerMail) {
         this.taskInformation = taskInformation;
         this.status = status;
         this.dueDate = dueDate;
         this.employee = employee;
+        this.manager = manager;
         this.employeeMail = employeeMail;
+        this.managerMail = managerMail;
     }
 
     public void complete() {
