@@ -16,9 +16,6 @@ import java.util.Collections;
 
 @Configuration
 public class OpenApiConfiguration {
-
-    @Value("${spring.profiles.default}")
-    private String activeProfile;
     
     @Bean
     public OpenAPI learningPlatformOpenApi() {
@@ -33,8 +30,6 @@ public class OpenApiConfiguration {
                 .externalDocs(new ExternalDocumentation()
                         .description("Hotech platform wiki documentation")
                         .url("https://inncontrol-platform.wiki.github.io/docs"));
-
-         boolean isRunningInProd =  activeProfile.equals("prod");
 
         openApi.servers(Collections.singletonList(new Server().url("/")));
 
