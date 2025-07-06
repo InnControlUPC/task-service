@@ -2,6 +2,7 @@ package com.github.inncontrol.shared.application.internal.outboundedservices.acl
 
 import com.github.inncontrol.shared.domain.valueobjects.EmployeeId;
 import com.github.inncontrol.shared.infrastructure.feign.EmployeeFeignClient;
+import com.github.inncontrol.shared.infrastructure.feign.EmployeeFeignClientAdapter;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +18,11 @@ import java.util.Optional;
 @Service
 public class ExternalEmployeeService {
 
-    private final EmployeeFeignClient employeeFeignClient;
+    private final EmployeeFeignClientAdapter employeeFeignClient;
 
     public Optional<EmployeeId> fetchEmployeeIdentifierByEmail(String email) {
         try {
-            EmployeeId employeeId = employeeFeignClient.getEmployeeByEmail(email);
+            EmployeeId employeeId = employeeFeignClient.getEmployeeIdByEmail(email);
             return Optional.ofNullable(employeeId);
         } catch (Exception e) {
             System.err.println("Error fetching profile by email: " + e.getMessage());
